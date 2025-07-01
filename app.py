@@ -20,7 +20,14 @@ def create_app():
     jwt.init_app(app)
     migrate.init_app(app, db)
     limiter.init_app(app)
-    cors.init_app(app, resources={r"/api/*": {"origins": "*"}})
+
+    # ---- CORS SETUP ----
+    # Option 1: Allow all origins (you already had this)
+    # cors.init_app(app, resources={r"/api/*": {"origins": "*"}})
+
+    # Option 2: Allow only specific frontend (more secure in production)
+    frontend_url = os.getenv("FRONTEND_URL", "*")  # Set this in Render
+    cors.init_app(app, resources={r"/api/*": {"origins": frontend_url}})
 
     # Register blueprints
     app.register_blueprint(auth_bp)
@@ -37,4 +44,3 @@ def create_app():
         return {"message": "Japanime backend is live!"}
 
     return app
-    
