@@ -39,7 +39,7 @@ def upload_photo():
     file_path = os.path.join(upload_folder, unique_filename)
     file.save(file_path)
 
-    user.profile_photo = f"http://localhost:5000/uploads/{unique_filename}"
+    user.profile_photo = f"https://japanime-backend.onrender.com/{unique_filename}"
     db.session.commit()
 
     return jsonify({
