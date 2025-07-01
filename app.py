@@ -30,5 +30,11 @@ def create_app():
     @app.route("/uploads/<path:filename>")
     def serve_uploaded_file(filename):
         return send_from_directory("uploads", filename)
+    
+    # Root route to avoid 404 on homepage
+    @app.route("/")
+    def index():
+        return {"message": "Japanime backend is live!"}
 
     return app
+    
