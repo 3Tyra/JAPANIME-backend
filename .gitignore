@@ -1,0 +1,44 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment folder
+venv/
+env/
+
+# Environment variables
+.env
+
+# Flask uploads folder (if you want to exclude uploaded files)
+uploads/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Migrations (optional: sometimes you want to track these)
+migrations/
+
+# IDE/editor configs (add yours if you want)
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
